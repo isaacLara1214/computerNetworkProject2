@@ -2,8 +2,23 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Networking Project | Isaac Lara</title>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-6J7Q1K816E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-6J7Q1K816E');
+  </script>
+
+  <!-- DOMPurify for XSS sanitization -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/dompurify/3.1.6/purify.min.js"
+          integrity="sha512-+yv3JAbPEhFGCFkMDmSUBMinNnFoeVXAaXDWnkOeVJgME1GGRMqlqKMBh3DF0XBXK9VJ9YMdgmJqQWRXGv8g=="
+          crossorigin="anonymous"></script>
+
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -16,11 +31,12 @@
         <li><a href="#concepts">Concepts</a></li>
         <li><a href="#protocols">Protocols</a></li>
         <li><a href="#security">Security</a></li>
+        <li><a href="#guestbook">Guestbook</a></li>
       </ul>
     </nav>
 
     <div class="hero-content" id="home">
-      <p class="tag">Computer Networking Project 1</p>
+      <p class="tag">Computer Networking Project 2</p>
       <h1>Build & Deploy a Public Website</h1>
       <p class="subtitle">
         This website demonstrates how DNS, IP addressing, HTTP/HTTPS, and web
@@ -111,7 +127,7 @@
 
     <section class="section alt" id="security">
       <div class="container">
-        <h2>Security Feature</h2>
+        <h2>Security Features</h2>
         <div class="security-panel">
           <div>
             <p class="security-label">Current Status</p>
@@ -126,6 +142,73 @@
           </button>
         </div>
         <p id="protocolMessage" class="protocol-message"></p>
+
+        <div class="card-grid" style="margin-top:2rem;">
+          <article class="card">
+            <h3>HTTPS / TLS</h3>
+            <p>All traffic is encrypted end-to-end via Netlify's automatic TLS certificate. HTTP requests are force-redirected to HTTPS.</p>
+          </article>
+          <article class="card">
+            <h3>Security Headers</h3>
+            <p>HSTS, Content-Security-Policy, X-Frame-Options, X-Content-Type-Options, and Referrer-Policy headers are set on every response.</p>
+          </article>
+          <article class="card">
+            <h3>XSS Protection</h3>
+            <p>All user-submitted content is sanitized with DOMPurify before being rendered in the DOM, preventing script injection attacks.</p>
+          </article>
+          <article class="card">
+            <h3>Rate Limiting</h3>
+            <p>The guestbook enforces a 30-second cooldown between submissions to prevent abuse and flooding.</p>
+          </article>
+          <article class="card">
+            <h3>Firestore Rules</h3>
+            <p>Server-side security rules validate every write — enforcing field types, length limits, and blocking all updates and deletes.</p>
+          </article>
+          <article class="card">
+            <h3>Input Validation</h3>
+            <p>All form inputs are validated for length and content on both the client and server before any data is stored.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Guestbook / Database Integration -->
+    <section class="section" id="guestbook">
+      <div class="container">
+        <h2>Guestbook</h2>
+        <p style="color:var(--muted);margin-bottom:1.5rem;">
+          Leave a message — stored securely in Firebase Firestore.
+        </p>
+
+        <form id="guestbookForm" class="guestbook-form" novalidate>
+          <div class="form-group">
+            <label for="nameInput">Name</label>
+            <input
+              type="text"
+              id="nameInput"
+              maxlength="100"
+              placeholder="Your name"
+              autocomplete="off"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="messageInput">Message</label>
+            <textarea
+              id="messageInput"
+              maxlength="1000"
+              rows="4"
+              placeholder="Say something..."
+              required
+            ></textarea>
+          </div>
+          <div id="formError" class="form-error" aria-live="polite"></div>
+          <button type="submit" id="submitBtn" class="btn btn-primary">Post Message</button>
+        </form>
+
+        <div id="messagesList" class="messages-list" aria-live="polite">
+          <p class="loading-text">Loading messages…</p>
+        </div>
       </div>
     </section>
   </main>
@@ -133,6 +216,14 @@
   <footer class="footer">
     <p>Created by Isaac Lara | Spring 2026 | Computer Networking</p>
   </footer>
+
+  <!-- Firebase config injected at build time — never committed to git -->
+  <script src="firebase-config.js"></script>
+
+  <!-- Firebase SDK (compat build, loaded from Google CDN) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics-compat.js"></script>
 
   <script src="script.js"></script>
 </body>

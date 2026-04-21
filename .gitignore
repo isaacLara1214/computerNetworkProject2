@@ -1,0 +1,7 @@
+project.md
+.env
+.DS_Store
+node_modules/
+firebase-config.js
+CLAUDE.md
+
