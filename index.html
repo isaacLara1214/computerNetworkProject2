@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+  <title>Networking Project | Isaac Lara</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <div class="logo">NetProject</div>
+      <button id="menuToggle" class="menu-toggle">☰</button>
+      <ul id="navLinks" class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#concepts">Concepts</a></li>
+        <li><a href="#protocols">Protocols</a></li>
+        <li><a href="#security">Security</a></li>
+      </ul>
+    </nav>
+
+    <div class="hero-content" id="home">
+      <p class="tag">Computer Networking Project 1</p>
+      <h1>Build & Deploy a Public Website</h1>
+      <p class="subtitle">
+        This website demonstrates how DNS, IP addressing, HTTP/HTTPS, and web
+        security are used in a real public website deployment.
+      </p>
+      <div class="hero-buttons">
+        <a href="#concepts" class="btn btn-primary">Explore Concepts</a>
+        <a href="#security" class="btn btn-secondary">View Security</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <h2>Project Overview</h2>
+        <p>
+          This project was created by <strong>Isaac Lara</strong> for Computer
+          Networking. It is hosted publicly and shows how websites use domain
+          names, IP addresses, and secure communication over the internet.
+        </p>
+      </div>
+    </section>
+
+    <section class="section alt" id="concepts">
+      <div class="container">
+        <h2>Networking Concepts</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3>DNS</h3>
+            <p>
+              DNS translates a human-readable domain name into an IP address so
+              browsers can locate the correct web server.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>IP Addressing</h3>
+            <p>
+              Devices on the internet communicate using IP addresses. This site
+              can resolve to both IPv4 and IPv6 addresses.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Hosting</h3>
+            <p>
+              This website is hosted publicly so users can access it from a web
+              browser anywhere with an internet connection.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="protocols">
+      <div class="container">
+        <h2>HTTP vs HTTPS</h2>
+        <div class="two-column">
+          <div class="info-box">
+            <h3>HTTP</h3>
+            <p>
+              HTTP is the protocol used to transfer web content between clients
+              and servers.
+            </p>
+            <ul>
+              <li>Transfers website data</li>
+              <li>Uses request/response model</li>
+              <li>Can return status codes like 200 OK</li>
+            </ul>
+          </div>
+
+          <div class="info-box">
+            <h3>HTTPS</h3>
+            <p>
+              HTTPS is the secure version of HTTP. It encrypts communication
+              using TLS to protect data between the client and server.
+            </p>
+            <ul>
+              <li>Encrypts traffic</li>
+              <li>Improves security and trust</li>
+              <li>Required for modern public websites</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="security">
+      <div class="container">
+        <h2>Security Feature</h2>
+        <div class="security-panel">
+          <div>
+            <p class="security-label">Current Status</p>
+            <h3 id="securityStatus">HTTPS Enabled</h3>
+            <p>
+              This site uses secure communication, which helps protect data in
+              transit between the browser and the server.
+            </p>
+          </div>
+          <button id="statusButton" class="btn btn-primary">
+            Check Website Protocol
+          </button>
+        </div>
+        <p id="protocolMessage" class="protocol-message"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>Created by Isaac Lara | Spring 2026 | Computer Networking</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
