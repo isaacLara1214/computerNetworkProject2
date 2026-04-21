@@ -16,7 +16,7 @@
     X-Content-Type-Options       = "nosniff"
     Referrer-Policy              = "strict-origin-when-cross-origin"
     Permissions-Policy           = "geolocation=(), microphone=(), camera=()"
-    Content-Security-Policy      = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.gstatic.com https://www.googletagmanager.com https://www.google.com https://www.gstatic.com https://*.firebaseio.com https://*.googleapis.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://*.googleapis.com https://*.firebaseio.com https://firestore.googleapis.com https://www.google-analytics.com; frame-src https://www.google.com; img-src 'self' data: https://www.google-analytics.com;"
+    Content-Security-Policy      = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.gstatic.com https://www.googletagmanager.com https://www.google.com https://*.firebaseio.com https://*.googleapis.com; style-src 'self' 'unsafe-inline'; connect-src 'self' https://www.gstatic.com https://*.googleapis.com https://*.firebaseio.com https://firestore.googleapis.com https://www.google-analytics.com; frame-src https://www.google.com; img-src 'self' data: https://www.google-analytics.com;"
 
 [[headers]]
   for = "/*.js"
