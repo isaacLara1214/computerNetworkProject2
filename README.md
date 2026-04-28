@@ -3,7 +3,7 @@
 This repository contains my Spring 2026 Computer Networking Project 2 submission.  
 The goal was to take a basic static website and improve it with real-world security, performance, deployment, and monitoring practices.
 
-Live site: `https://compnetworkproject2.netlify.app`
+Live site: `https://serene-froyo-e7a967.netlify.app/`
 
 ## What I implemented
 
